@@ -13,3 +13,4 @@ tree.insert(2);
 tree.deleteItem(23);
 console.log(tree);
 prettyPrint(tree.root);
+console.log(tree.find(67));

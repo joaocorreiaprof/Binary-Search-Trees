@@ -76,6 +76,22 @@ class Tree {
     }
     return curr;
   }
+  find(value) {
+    return this.findValue(this.root, value);
+  }
+
+  findValue(node, value) {
+    if (node === null) {
+      return null;
+    }
+    if (value < node.data) {
+      return this.findValue(node.left, value);
+    } else if (value > node.data) {
+      return this.findValue(node.right, value);
+    }
+
+    return node;
+  }
 }
 
 export default Tree;
