@@ -40,7 +40,42 @@ class Tree {
     return node;
   }
 
-  deleteItem() {}
+  deleteItem(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  deleteNode(node, value) {
+    if (node === null) {
+      return node;
+    }
+
+    if (value < node.data) {
+      node.left = this.deleteNode(node.left, value);
+    } else if (value > node.data) {
+      node.right = this.deleteNode(node.right, value);
+    } else {
+      if (node.left === null) {
+        return node.right;
+      }
+      if (node.right === null) {
+        return node.left;
+      }
+
+      let succ = this.getSuccessor(node);
+      node.data = succ.data;
+      node.right = this.deleteNode(node.right, succ.data);
+    }
+
+    return node;
+  }
+
+  getSuccessor(node) {
+    let curr = node.right;
+    while (curr !== null && curr.left !== null) {
+      curr = curr.left;
+    }
+    return curr;
+  }
 }
 
 export default Tree;

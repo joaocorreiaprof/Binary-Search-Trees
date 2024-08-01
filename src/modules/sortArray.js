@@ -5,4 +5,4 @@ function sortArray(array) {
   return uniqueArray.sort((a, b) => a - b);
 }
 
-export { sortArray };
+export default sortArray;
