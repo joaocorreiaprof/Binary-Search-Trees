@@ -21,7 +21,25 @@ class Tree {
 
     return node;
   }
-  insert() {}
+
+  insert(value) {
+    this.root = this.insertNode(this.root, value);
+  }
+
+  insertNode(node, value) {
+    if (node === null) {
+      return new Node(value);
+    }
+
+    if (value < node.data) {
+      node.left = this.insertNode(node.left, value);
+    } else if (value > node.data) {
+      node.right = this.insertNode(node.right, value);
+    }
+
+    return node;
+  }
+
   deleteItem() {}
 }
 
