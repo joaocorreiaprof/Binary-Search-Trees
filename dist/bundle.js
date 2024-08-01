@@ -116,7 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconsole.log(\"working!\");\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Tree */ \"./src/modules/Tree.js\");\n/* harmony import */ var _modules_sortArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/sortArray */ \"./src/modules/sortArray.js\");\n\n\n\n\nlet array = [7, 3, 9, 10, 50, 1, 0, 50];\n\nconsole.log((0,_modules_sortArray__WEBPACK_IMPORTED_MODULE_2__.sortArray)(array));\n\nconst tree = new _modules_Tree__WEBPACK_IMPORTED_MODULE_1__[\"default\"](array);\nconsole.log(tree);\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/Node.js":
+/*!*****************************!*\
+  !*** ./src/modules/Node.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Node {\n  constructor(data, left = null, right = null) {\n    this.data = data;\n    this.left = left;\n    this.right = right;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Node);\n\n\n//# sourceURL=webpack://webpack-demo/./src/modules/Node.js?");
+
+/***/ }),
+
+/***/ "./src/modules/Tree.js":
+/*!*****************************!*\
+  !*** ./src/modules/Tree.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _Node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Node */ \"./src/modules/Node.js\");\n\n\nclass Tree {\n  constructor(array) {\n    this.root = this.buildTree(array);\n  }\n\n  buildTree(array) {\n    let sortedArray = array;\n    return this.buildBST(sortedArray, 0, sortedArray.length - 1);\n  }\n\n  buildBST(array, start, end) {\n    if (start > end) {\n      return null;\n    }\n    const mid = Math.floor((start + end) / 2);\n    const node = new _Node__WEBPACK_IMPORTED_MODULE_0__[\"default\"](array[mid]);\n\n    node.left = this.buildBST(array, start, mid - 1);\n    node.right = this.buildBST(array, mid + 1, end);\n\n    return node;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tree);\n\n\n//# sourceURL=webpack://webpack-demo/./src/modules/Tree.js?");
+
+/***/ }),
+
+/***/ "./src/modules/sortArray.js":
+/*!**********************************!*\
+  !*** ./src/modules/sortArray.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sortArray: () => (/* binding */ sortArray)\n/* harmony export */ });\nfunction sortArray(array) {\n  return array.sort((a, b) => a - b);\n}\n\n\n\n\n//# sourceURL=webpack://webpack-demo/./src/modules/sortArray.js?");
 
 /***/ })
 
