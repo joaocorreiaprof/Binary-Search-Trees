@@ -49,7 +49,7 @@ A driver script is included to demonstrate the functionality of the BST. The scr
 
 ## Getting Started
 
-Follow these instructions to get a copy of the project template up and running on your local machine.
+Follow these instructions to get a copy up and running on your local machine.
 
 ### Prerequisites
 
