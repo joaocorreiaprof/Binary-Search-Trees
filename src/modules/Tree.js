@@ -6,8 +6,7 @@ class Tree {
   }
 
   buildTree(array) {
-    let sortedArray = array;
-    return this.buildBST(sortedArray, 0, sortedArray.length - 1);
+    return this.buildBST(array, 0, array.length - 1);
   }
 
   buildBST(array, start, end) {
@@ -22,6 +21,8 @@ class Tree {
 
     return node;
   }
+  insert() {}
+  deleteItem() {}
 }
 
 export default Tree;
