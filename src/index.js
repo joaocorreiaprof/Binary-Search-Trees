@@ -14,3 +14,9 @@ tree.deleteItem(23);
 console.log(tree);
 prettyPrint(tree.root);
 console.log(tree.find(67));
+
+const printNode = (node) => {
+  console.log(node.data);
+};
+
+tree.levelOrder(printNode);
